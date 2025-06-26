@@ -67,5 +67,4 @@ if submitted:
         f.write(f"Morts: {deaths}, Mobs: {mobs_killed}, Outil: {tools_used}, Nether: {explored_nether}, Dormi: {slept_last_night}\n")
         f.write(f"Conseils: {' | '.join(feedback)}\n\n")
 
-    st.caption("✅ Session enregistrée dans minecraft_ses
-      sion_log.txt")
+    st.caption("✅ Session enregistrée dans minecraft_session_log.txt")
