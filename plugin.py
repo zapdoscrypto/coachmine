@@ -12,35 +12,20 @@ def encouragement(msg): st.markdown(f"✅ {msg}")
 
 def conseil(msg): st.markdown(f"💡 {msg}")
 
-if jeu == "FC 24": st.subheader("Entre tes statistiques FC 24") buts_marques = st.number_input("Buts marqués ?", 0) buts_encaisses = st.number_input("Buts encaissés ?", 0) passes_decisives = st.number_input("Passes décisives ?", 0) tirs_cadres = st.number_input("Tirs cadrés ?", 0) possessions = st.slider("Possession moyenne (%)", 0, 100, 50) fautes_commises = st.number_input("Fautes commises ?", 0) cartons_jaunes = st.number_input("Cartons jaunes ?", 0) cartons_rouges = st.number_input("Cartons rouges ?", 0) interceptions = st.number_input("Interceptions ?", 0) dribbles_reussis = st.number_input("Dribbles réussis ?", 0) penalties_marques = st.number_input("Pénalties marqués ?", 0) matches_joues = st.number_input("Matchs joués ?", 1, step=1)
-
-if st.button("Analyse ton jeu"):
-    ratio_buts = buts_marques / matches_joues
-    ratio_passes = passes_decisives / matches_joues
-    fautes = fautes_commises + cartons_jaunes * 2 + cartons_rouges * 5
-
-    st.write(f"- Buts/match : {ratio_buts:.2f}")
-    st.write(f"- Passes décisives/match : {ratio_passes:.2f}")
-    st.write(f"- Possession : {possessions}%")
-    st.write(f"- Discipline (score fautes) : {fautes}")
-
-    if ratio_buts >= 1:
-        encouragement("Tu es une vraie machine à marquer ! Continue à dominer le terrain !")
-    elif ratio_buts >= 0.5:
-        encouragement("Très bon attaquant, tu fais la différence régulièrement !")
-    else:
-        conseil("Travaille ta finition pour transformer plus d’occasions en buts.")
-
-    if ratio_passes >= 0.5:
-        encouragement("Tu fais briller ton équipe avec tes passes décisives !")
-
-    if fautes <= 5:
-        encouragement("Ton fair-play est exemplaire, bravo !")
-    else:
-        conseil("Attention à la discipline, trop de fautes peuvent coûter cher.")
-
-    if dribbles_reussis >= 10:
-        encouragement("Tes dribbles sont redoutables !")
+if jeu == "FC 24":
+    st.subheader("Entre tes statistiques FC 24")
+    buts_marques = st.number_input("Buts marqués ?", 0)
+    buts_encaisses = st.number_input("Buts encaissés ?", 0)
+    passes_decisives = st.number_input("Passes décisives ?", 0)
+    tirs_cadres = st.number_input("Tirs cadrés ?", 0)
+    possessions = st.slider("Possession moyenne (%)", 0, 100, 50)
+    fautes_commises = st.number_input("Fautes commises ?", 0)
+    cartons_jaunes = st.number_input("Cartons jaunes ?", 0)
+    cartons_rouges = st.number_input("Cartons rouges ?", 0)
+    interceptions = st.number_input("Interceptions ?", 0)
+    dribbles_reussis = st.number_input("Dribbles réussis ?", 0)
+    penalties_marques = st.number_input("Pénalties marqués ?", 0)
+    matches_joues = st.number_input("Matchs joués ?", 1, step=1)
 
 elif jeu == "Minecraft": st.subheader("Entre tes données Minecraft") heures_jeu = st.number_input("Heures jouées ?", 0) nb_constructions = st.number_input("Constructions réalisées ?", 0) nb_campagnes = st.number_input("Campagnes survie terminées ?", 0) nb_objets_crees = st.number_input("Objets créés ?", 0) nb_mob_tues = st.number_input("Mobs tués ?", 0) nb_redstone = st.number_input("Circuits redstone construits ?", 0) nb_fermes = st.number_input("Fermes automatiques construites ?", 0) nb_mines_explorees = st.number_input("Mines explorées ?", 0)
 
