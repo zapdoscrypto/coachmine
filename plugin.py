@@ -1,7 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="CoachMine", page_icon="🎮")
-st.title("🎮 CoachMine - Ton assistant perso de jeu")
+st.set_page_config(page_title="CoachMine", page_icon="🎮") st.title("🎮 CoachMine - Ton assistant perso de jeu")
 
 jeux_disponibles = [ "FC 24", "Minecraft", "Fortnite", "Call of Duty", "League of Legends", "Valorant", "Apex Legends" ]
 
@@ -74,56 +73,4 @@ if st.button("Analyse ton shoot"):
         encouragement("Tir de sniper ! Tu vises avec précision.")
     else:
         conseil("Améliore ta visée pour faire plus de dégâts.")
-
-elif jeu == "Call of Duty": st.subheader("Stats Call of Duty") kills = st.number_input("Nombre de kills", 0) deaths = st.number_input("Nombre de morts", 1) assists = st.number_input("Assists", 0) headshots = st.number_input("Headshots", 0)
-
-if st.button("Analyse ta perf CoD"):
-    kdr = kills / deaths
-    st.write(f"Kill/Death Ratio : {kdr:.2f}")
-    st.write(f"Headshots : {headshots}")
-
-    if kdr >= 1.5:
-        encouragement("Tu domines le champ de bataille ! Continue comme ça.")
-    elif kdr >= 1:
-        encouragement("Bonne performance, tu tiens bon !")
-    else:
-        conseil("Travaille ta précision et tes déplacements pour t’améliorer.")
-
-elif jeu == "League of Legends": st.subheader("Stats LoL") kills = st.number_input("Kills", 0) deaths = st.number_input("Morts", 1) assists = st.number_input("Assists", 0) cs = st.number_input("Creep Score (CS)", 0)
-
-if st.button("Analyse ta game LoL"):
-    kda = (kills + assists) / deaths
-    st.write(f"KDA Ratio : {kda:.2f}")
-    st.write(f"CS : {cs}")
-
-    if kda >= 3:
-        encouragement("Excellent contrôle, tu fais la diff !")
-    elif kda >= 2:
-        encouragement("Bonne game, continue !")
-    else:
-        conseil("Sois plus prudent, évite les morts inutiles.")
-
-elif jeu == "Valorant": st.subheader("Stats Valorant") kills = st.number_input("Kills", 0) deaths = st.number_input("Morts", 1) assists = st.number_input("Assists", 0) headshots = st.number_input("Headshots", 0)
-
-if st.button("Analyse ta game Valorant"):
-    kdr = kills / deaths
-    st.write(f"Kill/Death Ratio : {kdr:.2f}")
-    st.write(f"Headshots : {headshots}")
-
-    if kdr > 1.5:
-        encouragement("Tu es un agent redoutable ! Continue comme ça !")
-    else:
-        conseil("Travaille ton crosshair placement et ta stratégie.")
-
-elif jeu == "Apex Legends": st.subheader("Stats Apex Legends") kills = st.number_input("Kills", 0) games_played = st.number_input("Parties jouées", 1) damage_done = st.number_input("Dégâts infligés", 0) revives = st.number_input("Réanimations", 0)
-
-if st.button("Analyse ton Apex"):
-    avg_damage = damage_done / games_played
-    st.write(f"Dégâts moyens par partie : {avg_damage:.0f}")
-    st.write(f"Kills : {kills}, Réanimations : {revives}")
-
-    if avg_damage >= 800:
-        encouragement("Tu es un monstre, tu fais fondre les adversaires !")
-    else:
-        conseil("Améliore ta précision et vise les headshots pour faire plus de dégâts.")
 
