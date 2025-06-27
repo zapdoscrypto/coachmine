@@ -1,6 +1,8 @@
 import streamlit as st
 
-st.set_page_config(page_title="CoachMine", page_icon="🎮") st.title("🎮 CoachMine - Ton assistant perso de jeu")
+st.set_page_config(page_title="CoachMine", page_icon="🎮") 
+
+st.title("🎮 CoachMine - Ton assistant perso de jeu")
 
 jeux_disponibles = [ "FC 24", "Minecraft", "Fortnite", "Call of Duty", "League of Legends", "Valorant", "Apex Legends" ]
 
